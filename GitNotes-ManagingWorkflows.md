@@ -253,7 +253,7 @@ is the same as:
 
 	git rebase -i <commit sha#>^
 
-**The first example starts with the HEAD and gets the 3rd previous commit.  The 2nd example takes the specific commit and uses the ^ to include it in the selection.**
+**The first example starts with the HEAD (1st) and gets the 2nd and 3rd previous commit (2deacad).  The 2nd example takes the specific commit and uses the ^ to include it in the selection.**
 
 <hr>
 
