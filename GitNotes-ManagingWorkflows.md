@@ -320,8 +320,3 @@ In VIM:
 	#
 	# Note that empty commits are commented out
 
-#### Note!
-
-**The Squash above will leave you with two commits.  The initial Commit and the squashed. One option to squash a initial commit is with the command below: **
-
-	git rebase -i --root
