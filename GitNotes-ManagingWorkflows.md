@@ -283,40 +283,80 @@ is the same as:
 
 ## Squash
 
-	CKang@TXHQCKANG-L2 MINGW64 ~/Work/Code/Repositories/spring-webflux-reactive-rest-api-demo (master)
-	$ git logo
-	* 2ddba48 (HEAD -> master) SQUASHED!
-	* 5f37b68 Initial Commit
-	
-	git rebase -i 2ddba48^
+    $ git logo
+    * e3935ee (HEAD -> master, origin/master, origin/HEAD) Removed @Indexed from Tweet model
+    * 7bcacaf Using javax notblank constraint
+    * f78120c Using javax @NotBlank constraint
+    * 7257ae1 Updated Spring Boot Version
+    * 85f3d9d Using https url for git clone
+    * f0a0479 Spell correction
+    * 983d6b9 cleanup
+    * 520e448 Exception Handling with @ExceptionHandler
+    * 9a0bf3a Readme
+    * a07d4a4 Readme
+    * 21fcd8e Readme
+    * 5b16507 Readme
+    * 622f3d9 Readme
+    * 2d4681f Version Upgrade and Test
+    * aa8edb3 Tests
+    * 34098b7 Tests
+    * d05b42f Integration Tests
+    * 5f37b68 Initial Commit
+
+
+​	
+	git rebase -i d05b42f^
 
 In VIM:
 	
-	# Changed this from pick 2ddba48 SQUASHED!
-	squash 2ddba48 SQUASHED!
-	
-	# Rebase 5f37b68..2ddba48 onto 5f37b68 (1 command)
-	#
-	# Commands:
-	# p, pick <commit> = use commit
-	# r, reword <commit> = use commit, but edit the commit message
-	# e, edit <commit> = use commit, but stop for amending
-	# s, squash <commit> = use commit, but meld into previous commit
-	# f, fixup <commit> = like "squash", but discard this commit's log message
-	# x, exec <command> = run command (the rest of the line) using shell
-	# d, drop <commit> = remove commit
-	# l, label <label> = label current HEAD with a name
-	# t, reset <label> = reset HEAD to a label
-	# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-	# .       create a merge commit using the original merge commit's
-	# .       message (or the oneline, if no original merge commit was
-	# .       specified). Use -c <commit> to reword the commit message.
-	#
-	# These lines can be re-ordered; they are executed from top to bottom.
-	#
-	# If you remove a line here THAT COMMIT WILL BE LOST.
-	#
-	# However, if you remove everything, the rebase will be aborted.
-	#
-	# Note that empty commits are commented out
+	pick d05b42f Integration Tests
+	pick 34098b7 Tests
+	pick aa8edb3 Tests
+	pick 2d4681f Version Upgrade and Test
+	pick 622f3d9 Readme
+	pick 5b16507 Readme
+	pick 21fcd8e Readme
+	pick a07d4a4 Readme
+	pick 9a0bf3a Readme
+	pick 520e448 Exception Handling with @ExceptionHandler
+	pick 983d6b9 cleanup
+	pick f0a0479 Spell correction
+	pick 85f3d9d Using https url for git clone
+	pick 7257ae1 Updated Spring Boot Version
+	pick f78120c Using javax @NotBlank constraint
+	pick 7bcacaf Using javax notblank constraint
+	pick e3935ee Removed @Indexed from Tweet model
 
+Changed to:
+
+    pick d05b42f Integration Tests
+    squash 34098b7 Tests
+    squash aa8edb3 Tests
+    squash 2d4681f Version Upgrade and Test
+    squash 622f3d9 Readme
+    squash 5b16507 Readme
+    squash 21fcd8e Readme
+    squash a07d4a4 Readme
+    squash 9a0bf3a Readme
+    squash 520e448 Exception Handling with @ExceptionHandler
+    squash 983d6b9 cleanup
+    squash f0a0479 Spell correction
+    squash 85f3d9d Using https url for git clone
+    squash 7257ae1 Updated Spring Boot Version
+    squash f78120c Using javax @NotBlank constraint
+    squash 7bcacaf Using javax notblank constraint
+    squash e3935ee Removed @Indexed from Tweet model
+
+**Note: This will squash all the commits into 205b42f.  There Needs to be a previous comit, otherwise it won't squash.**
+
+This will result in:
+
+    $ git logo
+    * 69ebbb0 (HEAD -> master) SQUASHED!!!!
+    * 5f37b68 Initial Commit
+
+#### Note!
+
+**The Squash above will leave you with two commits.  The initial Commit and the squashed. One option to squash a initial commit is with the command below: **
+
+	git rebase -i --root
