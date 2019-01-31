@@ -175,6 +175,7 @@
         /# Note that empty commits are commented out
 
 <hr> 
+
 * p: keep commit
 * r: edit the commit message
 * e: pause the rebase process, so you can make more commits before continuing
@@ -243,6 +244,16 @@
     pick a05c13c Repairs to LunEx libraries
 
 **The next Screen Prompt you can edit the commit message**
+
+#### Note!!
+
+	git rebase -i HEAD~3
+
+is the same as:
+
+	git rebase -i <commit sha#>^
+
+**The first example starts with the HEAD and gets the 3rd previous commit.  The 2nd example takes the specific commit and uses the ^ to include it in the selection.**
 
 <hr>
 
