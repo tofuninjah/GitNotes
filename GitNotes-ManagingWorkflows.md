@@ -280,3 +280,48 @@ is the same as:
     git cherry-pick -n <sha#>
 
 * **-n** Applied the changes, but does **NOT** apply the commit, you would then manually commit the change.
+
+## Squash
+
+	CKang@TXHQCKANG-L2 MINGW64 ~/Work/Code/Repositories/spring-webflux-reactive-rest-api-demo (master)
+	$ git logo
+	* 2ddba48 (HEAD -> master) SQUASHED!
+	* 5f37b68 Initial Commit
+	
+	git rebase -i 2ddba48^
+
+In VIM:
+	
+	# Changed this from pick 2ddba48 SQUASHED!
+	squash 2ddba48 SQUASHED!
+	
+	# Rebase 5f37b68..2ddba48 onto 5f37b68 (1 command)
+	#
+	# Commands:
+	# p, pick <commit> = use commit
+	# r, reword <commit> = use commit, but edit the commit message
+	# e, edit <commit> = use commit, but stop for amending
+	# s, squash <commit> = use commit, but meld into previous commit
+	# f, fixup <commit> = like "squash", but discard this commit's log message
+	# x, exec <command> = run command (the rest of the line) using shell
+	# d, drop <commit> = remove commit
+	# l, label <label> = label current HEAD with a name
+	# t, reset <label> = reset HEAD to a label
+	# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+	# .       create a merge commit using the original merge commit's
+	# .       message (or the oneline, if no original merge commit was
+	# .       specified). Use -c <commit> to reword the commit message.
+	#
+	# These lines can be re-ordered; they are executed from top to bottom.
+	#
+	# If you remove a line here THAT COMMIT WILL BE LOST.
+	#
+	# However, if you remove everything, the rebase will be aborted.
+	#
+	# Note that empty commits are commented out
+
+#### Note!
+
+**The Squash above will leave you with two commits.  The initial Commit and the squashed. One option to squash a initial commit is with the command below: **
+
+	git rebase -i --root
