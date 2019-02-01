@@ -253,7 +253,7 @@ is the same as:
 
 	git rebase -i <commit sha#>^
 
-**The first example starts with the HEAD (1st) and gets the 2nd and 3rd previous commit (2deacad).  The 2nd example takes the specific commit and uses the ^ to include it in the selection.**
+**The first example starts with the HEAD , then gets the 1st  2nd and 3rd previous commit (27e442d The Original Files) -> this is the commit that the other commits will be squashed into.  The 2nd example takes the specific commit and uses the ^ to include it in the selection.**
 
 <hr>
 
@@ -305,7 +305,7 @@ is the same as:
 
 
 ​	
-	git rebase -i d05b42f^
+​	git rebase -i d05b42f^
 
 In VIM:
 	
@@ -360,3 +360,4 @@ This will result in:
 **The Squash above will leave you with two commits.  The initial Commit and the squashed. One option to squash a initial commit is with the command below: **
 
 	git rebase -i --root
+
